@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W ESTSIDE  Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+ body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            box-sizing: border-box;
+        }
+
+        .header {
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-family: Georgia, serif;
+            font-weight: bold;
+        }
+
+        .logo span {
+            font-family: cursive;
+            font-size: 30px;
+            font-weight: normal;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            border: 1px solid black;
+            border-radius: 30px;
+            padding: 6px    12px;
+            width: 250px;
+            background-color: white;
+            padding-left: 5px;
+            width: 100%;
+            max-width: 250px;
+            margin: 10px 0;
+        }
+
+        .search-bar i {
+            color: black;
+            margin-right: 10px;
+
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 16px;
+            background: transparent;
+        }
+
+        nav{
+           background-color: white;
+        }
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            margin-left: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-weight: 500;
+            color: black;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .icons i {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .sign-in {
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+
+        .section-heading {
+    margin-left: 40px; 
+    margin-bottom: 20px; 
+    margin-top: 5px;
+  }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        .p.sec{
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+            margin-bottom: 4px;
+        }
+
+        .btn:hover {
+            color: black;
+            background-color: white;
+
+        }
+
+       .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    gap: 40px;
+  }
+
+  .footer-column {
+    flex: 1 1 250px;
+  }
+
+  .footer-column h3 {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-column ul li a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s;
+  }
+
+  .footer-column ul li a:hover {
+    color: #000;
+  }
+
+  .email-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .subscribe-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: black;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .subscribe-btn:hover {
+    background: #333;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #ddd;
+    margin-top: 30px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1200px;
+    margin: 30px auto 0;
+  }
+
+  .footer-links a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+  }
+
+  .footer-links a:hover {
+    color: #000;
+  }
+
+  .footer-socials a {
+    margin-left: 10px;
+    font-size: 18px;
+    color: black;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container, .footer-bottom {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-links a {
+      margin: 5px 10px;
+    }
+
+    .footer-socials a {
+      margin: 10px 8px;
+    }
+  }
+
+    
+
+        .remove-btn {
+            background: red;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .search-bar {
+                width: 100%;
+            }
+        }
+
+         .carousel-container {
+      width: 90%;
+      max-width: 900px;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel-slide {
+      display: flex;
+      width: 300%;
+      animation: slide 15s infinite;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0%   { transform: translateX(0); }
+      33%  { transform: translateX(0); }
+
+      36%  { transform: translateX(-100%); }
+      66%  { transform: translateX(-100%); }
+
+      69%  { transform: translateX(-200%); }
+      100% { transform: translateX(-200%); }
+    }
+
+    @media (max-width: 768px) {
+      .carousel-slide img {
+        height: 250px;
+      }
+    }
+    </style>
+
+</head>
+<body>
+  <!-- header -->
+       <header class="header">
+           <div class="logo"><span>W</span>ESTSIDE</div>
+           <div class="search-bar">
+               <i class="fas fa-search"></i>
+               <input type="text" placeholder="Search">
+           </div>
+           <nav>
+           <ul>
+               <li><a href="#Women">Women</a></li>
+               <li><a href="#Men">Men</a></li>
+               <li><a href="#Kids">Kids</a></li>
+           </ul>
+       </nav>
+           <div class="icons">
+               <i class="far fa-heart"></i>
+               <i class="far fa-shopping-bag"></i>
+               <div class="sign-in">Sign in</div>
+           </div>
+       </header>
+        
+        <div class="slider">
+        <div class="slides">
+            <img src="https://www.westside.com/cdn/shop/files/KURTAS_KURTIS.jpg?v=1744880801" height="710px">
+        </div>
+    </div>
+
+    <div class="slider">
+        <div class="slides">
+            <img src="https://www.westside.com/cdn/shop/files/WES-CASUAL.jpg?v=1744883664" height="710px">
+        </div>
+    </div>
+
+    <div class="slider">
+        <div class="slides">
+            <img src="https://www.westside.com/cdn/shop/files/HOP-BABY_copy.jpg?v=1744887324" height="710px">
+        </div>
+    </div>
+
+     <!-- Women section -->
+     <section id="Women">
+        <h2 class="section-heading">Women`s Kurtis</h2>
+        <div class="products">
+            <div class="product">
+            <img src="https://www.westside.com/cdn/shop/files/301013355BROWN_1.jpg?v=1744181090&width=493" alt="kurti 1">
+            <h3>Zuba Brown Foliage Printed A-Line Kurta cotton</h3>
+            <p class="p sec">1,599 rps</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://www.westside.com/cdn/shop/files/301015453NATURAL_1.jpg?v=1744796897&width=493" alt="kurti 2">
+            <h3>Utsa Off-White Checks Design A-Line Cotton Kurta</h3>
+            <p class="p sec">1,499 rps</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+            <div class="product">
+            <img src="https://www.westside.com/cdn/shop/files/301015618NAVY_1.jpg?v=1744812311&width=493" alt="kurti 3">
+            <h3> Utsa Navy Botanical Pattern Cotton Straight Kurta</h3>
+            <p class="p sec">699 rps</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://www.westside.com/cdn/shop/files/301013632YELLOW_1.jpg?v=1741782203&width=493" alt="kurti 4">
+            <h3>Utsa Yellow Floral Patterned A-Line Kurta</h3>
+            <p class="p sec">1,299 rps</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://www.westside.com/cdn/shop/files/301013948BEIGE_1.jpg?v=1744181091&width=493" alt="kurti 5">
+            <h3>Zuba Beige Floral Design A-Line Kurta</h3>
+            <p class="p sec">2,599 rps</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://www.westside.com/cdn/shop/files/301013050YELLOW_1.jpg?v=1743050154&width=493" alt="kurti 6">
+            <h3>Utsa Yellow Striped Cotton A-Line Kurta</h3>
+            <p class="p sec">999 rps</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://www.westside.com/cdn/shop/files/301012909INDIGO_1.jpg?v=1741782201&width=493" alt="kurti 7">
+            <h3>Utsa Indigo Peacock Design Straight Cotton Kurta</h3>
+            <p class="p sec">699 rps</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://www.westside.com/cdn/shop/files/300999811MAROON_1.jpg?v=1734615461&width=493" alt="kurti 8">
+            <h3>Utsa Red Colour-Blocked Fit-and-Flare Cotton Kurta
+            </h3>
+            <p class="p sec">1,499 rps</p>
+            <button class="btn">Add to Cart</button>
+        </div>
+        </div>
+    </section>
+
+    
+    <!-- Men section -->
+    <section id="Men">
+        <h2 class="section-heading">Men summer shirts</h2>
+        <div class="products">
+            <div class="product">
+                <img src="https://www.westside.com/cdn/shop/files/300989852BROWN_1.jpg?v=1733990524&width=493" alt="shirt 1">
+                <h3>WES Casuals Brown Relaxed-Fit Cotton-Blend Polo T-Shirt</h3>
+                <p class="p sec">699 rps</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://www.westside.com/cdn/shop/files/301008800NAVY_1.jpg?v=1739865884&width=493" alt="shirt 2">
+                <h3>Ascot Navy Striped Relaxed-Fit Cotton-Blend Polo T-Shirt</h3>
+                <p class="p sec">1,499 rps</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://www.westside.com/cdn/shop/files/301018313TAUPE_1.jpg?v=1744260269&width=493" alt="shirt 3">
+                <h3>WES Casuals Taupe Relaxed-Fit Cotton-Blend Polo T-Shirt</h3>
+                <p class="p sec">899 rps</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://www.westside.com/cdn/shop/files/301018311BEIGE_1.jpg?v=1744260253&width=493" alt="shirt 4">
+                <h3>WES Casuals Beige Relaxed-Fit Cotton-Blend Polo T-Shirt
+                </h3>
+                <p class="p sec">899 rps</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://www.westside.com/cdn/shop/files/301008799RUST_1.jpg?v=1738857720&width=493" alt="shirt 5">
+                <h3>Ascot Rust Knitted Relaxed-Fit Cotton-Blend Polo T-Shirt
+                </h3>
+                <p class="p sec">1,499 rps</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://www.westside.com/cdn/shop/files/301018313LIGHTBLUE_1.jpg?v=1744260254&width=493" alt="shirt 6">
+                <h3>WES Casuals Blue Relaxed-Fit Cotton-Blend Polo T-Shirt
+                </h3>
+                <p class="p sec">899 rps</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://www.westside.com/cdn/shop/files/301018312OFFWHITE_1.jpg?v=1744260270&width=493" alt="shirt 7">
+                <h3>WES Casuals White Relaxed-Fit Cotton-Blend Polo T-Shirt
+                </h3>
+                <p class="p sec">899 rps</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://www.westside.com/cdn/shop/files/301008800OLIVE_1.jpg?v=1739865887&width=493" alt="shirt 8">
+                <h3>Ascot Olive Striped Relaxed-Fit Cotton-Blend Polo T-Shirt
+                </h3>
+                <p class="p sec">1,499 rps</p>
+                <button class="btn">Add to Cart</button>
+            </div>    
+        </div>
+     </section>
+
+     
+    <!-- Kids Section -->
+    <section id="Kids">
+        <h3 class="section-heading">Baby bodycon suits</h3>
+        <div class="products">
+            <div class="product">
+                <img src="https://www.westside.com/cdn/shop/files/301015059BLUE_1.jpg?v=1744808662&width=493" alt="suit 1">
+                <h3>HOP Baby Blue Animal Printed Cotton T-Shirt with Shorts Set</h3>
+                <p class="p sec">599 rps</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://www.westside.com/cdn/shop/files/301007326MULTI_1.jpg?v=1738333855&width=493" alt="suit 2">
+                <h3>HOP Baby White Animal Printed Cotton T-Shirt and Shorts Set
+                </h3>
+                <p class="p sec">399 rps</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://www.westside.com/cdn/shop/files/301015430MULTI_1.jpg?v=1743779682&width=493" alt="suit 3">
+                <h3>HOP Baby Multicolour Printed Cotton T-Shirt with Shorts Set
+                </h3>
+                <p class="p sec">599 rps</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://www.westside.com/cdn/shop/files/301007797SAGE_1.jpg?v=1734706614&width=493" alt="suit 4">
+                <h3>HOP Baby Sage Animal Design Cotton T-Shirt with Joggers Set
+                </h3>
+                <p class="p sec">799 rps</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://www.westside.com/cdn/shop/files/301010413SAGE_1.jpg?v=1742295578&width=493" alt="suit 5">
+                <h3>HOP Baby Sage Striped Cotton T-Shirt & Shorts Set
+                </h3>
+                <p class="p sec">599 rps</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://www.westside.com/cdn/shop/files/301002534BLUE_1.jpg?v=1735897384&width=493" alt="suit 6">
+                <h3>HOP Baby Blue Animal Printed Cotton T-Shirt & Dungaree Set</h3>
+                <p class="p sec">799 rps</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://www.westside.com/cdn/shop/files/301012105MULTI_1.jpg?v=1742295587&width=493" alt="suit 7">
+                <h3>HOP Baby Light Blue Printed Cotton T-Shirt & Shorts Set
+                </h3>
+                <p class="p sec">399 rps</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://www.westside.com/cdn/shop/files/301010220WHITE_1.jpg?v=1742295578&width=493" alt="suit 8">
+                <h3>HOP Baby White Cotton Waistcoat, Shirt, Shorts and Bow Set
+                </h3>
+                <p class="p sec">999 rps</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+        </div>
+      </section>
+    
+     <img src="https://www.westside.com/cdn/shop/files/WSC-BANNER_WEB.jpg?v=1743149620" height="710px">
+    </section>
+
+   <footer style="background: #f5f5f5; padding: 40px 20px; font-family: Arial, sans-serif;">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>SHOP</h3>
+      <ul>
+        <li><a href="#">WOMAN</a></li>
+        <li><a href="#">MAN</a></li>
+        <li><a href="#">KIDS</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>SITES & STORES</h3>
+      <ul>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">CONTACT US</a></li>
+        <li><a href="#">STORE LOCATOR</a></li>
+        <li><a href="#">MEMBERSHIP</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>JOIN OUR NEWSLETTER</h3>
+      <p>Get the latest updates from our stores</p>
+      <input type="email" placeholder="Email Id" class="email-input" />
+      <button class="subscribe-btn">SUBSCRIBE</button>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-links">
+      <a href="#">TERMS & CONDITIONS</a>
+      <a href="#">PRIVACY POLICY</a>
+      <a href="#">RETURN POLICY</a>
+    </div>
+    <div class="footer-socials">
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  </footer>
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartIcon = document.querySelector('.fa-shopping-bag');
+        const cartModal = document.getElementById('cartModal');
+        const cartItems = document.getElementById('cartItems');
+        const totalPrice = document.getElementById('totalPrice');
+
+        function updateCartIcon() {
+            let count = cart.length;
+            let existing = document.querySelector('.cart-count');
+            if (!existing) {
+                const span = document.createElement('span');
+                span.classList.add('cart-count');
+                span.textContent = count;
+                cartIcon.parentNode.insertBefore(span, cartIcon.nextSibling);
+            } else {
+                existing.textContent = count;
+            }
+        }
+
+        function saveCartToLocalStorage() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartIcon();
+        }
+
+        function renderCart() {
+            cartItems.innerHTML = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `<strong>${item.name}</strong><br>₹${item.price} <br> <button class='remove-btn' onclick='removeItem(${index})'>Remove</button>`;
+                cartItems.appendChild(li);
+                total += item.price;
+            });
+            totalPrice.textContent = `Total: ₹${total}`;
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            saveCartToLocalStorage();
+            renderCart();
+        }
+
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', e => {
+                const product = e.target.closest('.product');
+                const name = product.querySelector('h3').textContent;
+                const price = parseInt(product.querySelector('p').textContent);
+                cart.push({ name, price });
+                saveCartToLocalStorage();
+            });
+        });
+
+        cartIcon.addEventListener('click', () => {
+            cartModal.style.display = cartModal.style.display === 'block' ? 'none' : 'block';
+            renderCart();
+        });
+
+        document.getElementById('checkoutBtn').addEventListener('click', () => {
+            alert('Login required for checkout.');
+            cartModal.style.display = 'none';
+        });
+
+        updateCartIcon();
+    </script>
+</body>
+</html>
